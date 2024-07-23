@@ -115,3 +115,56 @@ class Sin(Symbol):
     def eval(self):
         from math import sin
         return sin(self.operands[0].eval())
+
+class Cos(Symbol):
+    n_operands = 1
+    def __str__(self):
+        return f'cos({self.operands[0]})'
+
+    def eval(self):
+        from math import cos
+        return cos(self.operands[0].eval())
+
+class Ln(Symbol):
+    n_operands = 1
+    def __str__(self):
+        return f'ln({self.operands[0]})'
+    
+    def eval(self):
+        from math import log
+        return log(self.operands[0].eval())
+
+class Exp(Symbol):
+    n_operands = 1
+    def __str__(self):
+        return f'exp({self.operands[0]})'
+
+    def eval(self):
+        from math import exp
+        return exp(self.operands[0].eval())
+
+class Sqrt(Symbol):
+    n_operands = 1
+    def __str__(self):
+        return f'sqrt({self.operands[0]})'
+
+    def eval(self):
+        from math import sqrt
+        return sqrt(self.operands[0].eval())
+    
+class Pow(Symbol):
+    n_operands = 2
+    def __str__(self):
+        return f'{self.operands[0]} ^ {self.operands[1]}'
+    
+    def eval(self):
+        return self.operands[0].eval() ** self.operands[1].eval()
+
+class Abs(Symbol):
+    n_operands = 1
+    def __str__(self):
+        return f'abs({self.operands[0]})'
+    
+    def eval(self):
+        return abs(self.operands[0].eval())
+
