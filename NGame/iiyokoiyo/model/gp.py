@@ -1,7 +1,7 @@
 import random
 from typing import List
-from ..env import Iiyokoiyo
-from ...eqtree import Symbol
+from ..env import Iiyokoiyo, Symbol
+
 
 class GP:
     """ Genetic Programming """

@@ -1,5 +1,4 @@
-from .env import Iiyokoiyo
-
+from .env import *
 
 def load_env(*args, **kwargs):
     return Iiyokoiyo(*args, **kwargs)
