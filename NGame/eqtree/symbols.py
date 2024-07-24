@@ -15,6 +15,16 @@ class Symbol:
     def eval(self):
         raise NotImplementedError
 
+    def preorder(self):
+        yield self
+        for operand in self.operands:
+            yield from operand.preorder()
+    
+    def postorder(self):
+        for operand in self.operands:
+            yield from operand.postorder()
+        yield self
+    
 
 class Number(Symbol):
     n_operands = 0
