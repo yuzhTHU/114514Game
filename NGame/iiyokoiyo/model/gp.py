@@ -16,7 +16,7 @@ class GP:
         self.population = self.init()
         self.best = (None, -1)
 
-        for episode in range(n_episode):
+        for episode in range(1, n_episode+1):
             children = []
 
             for _ in range(self.n_cross):
@@ -42,7 +42,7 @@ class GP:
                 break
 
             if not quiet and not episode % 10:
-                print(f'====== Episode {episode+1} ======')
+                print(f'====== Episode {episode} ======')
                 for x in self.population:
                     print('{2:6.1%} {1:.4f} = {0}'.format(x, x.eval(), self.env.reward(x, target)))
         return self.best[0]

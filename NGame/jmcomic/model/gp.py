@@ -42,7 +42,7 @@ class GP:
                 break
 
             if not quiet and not episode % 10:
-                print(f'====== Episode {episode+1} ======')
+                print(f'====== Episode {episode} ======')
                 for x in self.population:
                     print('{2:6.1%} [{1}] {0} (res={3:.2f})'.format(x, x.eval(), self.env.reward(x), x.eval(res=True)))
         return self.best[0]
