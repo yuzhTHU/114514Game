@@ -8,3 +8,6 @@ def load_model(name, env:Iiyokoiyo, *args, **kwargs):
     if name == 'GP':
         from .model.gp import GP
         return GP(env, *args, **kwargs)
+    elif name == 'MCTS':
+        from .model.mcts import MCTS
+        return MCTS(env, *args, **kwargs)
