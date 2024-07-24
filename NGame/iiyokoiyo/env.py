@@ -25,7 +25,8 @@ class Iiyokoiyo:
             if sym is Cat and not (state[idx].__class__ is Number and 
                                    state[idx+1].__class__ is Number): return False
             if sym is Pow and (state[idx].eval() < 0 and state[idx+1].eval() != 0): return False
-            if sym is Pow and (state[idx].eval() == 0 and state[idx+1].eval() == 0): return False
+            if sym is Pow and (state[idx].eval() == 0 and state[idx+1].eval() <= 0): return False
+            if sym is Pow and state[idx+1].eval() > 30: return False
         else:
             return False
         return True

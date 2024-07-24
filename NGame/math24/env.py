@@ -32,7 +32,8 @@ class Math24:
             if not (0 <= idx2 < len(state)): return False
             if sym is Div and state[idx2].eval() == 0: return False
             if sym is Pow and (state[idx1].eval() < 0 and state[idx2].eval() != 0): return False
-            if sym is Pow and (state[idx1].eval() == 0 and state[idx2].eval() == 0): return False
+            if sym is Pow and (state[idx1].eval() == 0 and state[idx2].eval() <= 0): return False
+            if sym is Pow and state[idx2].eval() > 30: return False
             if sym is Cat: return False
         else:
             return False

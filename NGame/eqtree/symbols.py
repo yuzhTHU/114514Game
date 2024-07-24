@@ -149,6 +149,12 @@ class Sqrt(Symbol):
     
 class Pow(Symbol):
     n_operands = 2
+    def __str__(self):
+        x1, x2 = str(self.operands[0]), str(self.operands[1])
+        if self.operands[0].__class__ in [Add, Sub, Mul, Div, Pow]: x1 = f'({x1})'
+        if self.operands[1].__class__ in [Add, Sub, Mul, Div]: x2 = f'({x2})'
+        return f'{x1} / {x2}'
+
     def eval(self):
         return self.operands[0].eval() ** self.operands[1].eval()
 
